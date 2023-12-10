@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/recetas.css">
+    <title>The Cooking World</title>
+  </head>
+  <body>
+    <div id="navbar">
+      <div id="options">
+        <div class="logo"><img id="logonavbar" src="imagenes/l_hori_osc.png"></div>
+        <div class="Inicio">Inicio</div>
+        <div class="Ver_Recetas">Ver Recetas</div>
+        <div class="Tu_Perfil">Tu perfil</div>
+      </div>
+    </div>
+    <div id="body">
+      <div id="contenedor0">
+        <div id="contenedor1">
+          <div class="cabecera">Recetas:</div>
+          <div id="boton-crear"><a href="NuevaReceta" class="boton-crear-receta"><span class="textito">Crear Receta</span></a></div>
+          <div class="buscador"><input type="text" id="buscador" name="buscador" required placeholder="Buscar..."></div>
+        </div>
+        <br>  
+        <div id="contenedor2">
+          {% for receta in recetas %} 
+            <div id="tarjeta">
+              <div id="imagen"><img src="{{receta.getImg_Rece}}"></div>
+              <div id="textos">
+                Nombre: {{receta.getNom_Rece()}}
+                <br>
+                Descripcion: {{receta.getDesc_Rec()}}
+              </div>
+            </div>  
+            <br>  
+          {% endfor %} 
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

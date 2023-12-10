@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/newReceta.css">
+    <title>The Cooking World</title>
+  </head>
+  <body>
+    <div id="navbar">
+      <div id="options">
+        <div class="logo"><img id="logonavbar" src="imagenes/l_hori_osc.png"></div>
+        <div class="Inicio">Inicio</div>
+        <div class="Ver_Recetas"><a class="enlace" href="VolverRecetas">Ver Recetas</a></div>
+        <div class="Tu_Perfil">Tu perfil</div>
+      </div>
+    </div>
+    <div id="body">
+        <div id="Contenedor1">
+          <form id="recetaForm" action="NewReceta" method="post">
+            <div id="form1">
+              <div class="esp"><label for="nombre">Nombre de la receta:</label><br>
+              <input type="text" name="name" id="name" required class="cuadrado"><br></div>
+              <br>
+              <div class="esp"><label for="nombre">Imagen:</label><br>
+              <input type="file" id="img" name="img"  ><br></div>
+              <br>
+              <div class="esp"><label for="organizacion">Descripción:</label><br>
+              <textarea name="desc" id="desc" rows="10" required class="cuadrado"></textarea><br></div>
+            </div>
+
+            <div id="form2">
+              <div class="ingredientes"><label for="fecha">Ingrediente 1:</label>
+              <select name="ingrediente1" class="cuadrado">
+              <option value="" disabled selected>Selecciona ingrediente</option>
+              {% for ingrediente in ingredientes %}
+                <option value="{{ ingrediente.getIdIngre() }}">{{ ingrediente.getNomIngre() }}</option>
+              {% endfor %}</select></div>
+              <br>
+              <div class="ingredientes"><label for="fecha">Ingrediente 2:</label>
+              <select name="ingrediente2" class="cuadrado">
+              <option value="" disabled selected>Selecciona ingrediente</option>
+              {% for ingrediente in ingredientes %}
+                <option value="{{ ingrediente.getIdIngre() }}">{{ ingrediente.getNomIngre() }}</option>
+              {% endfor %}</select></div>
+              <br>
+              <div class="ingredientes"><label for="fecha">Ingrediente 3:</label>
+              <select name="ingrediente3" class="cuadrado">
+              <option value="" disabled selected>Selecciona ingrediente</option>
+              {% for ingrediente in ingredientes %}
+                <option value="{{ ingrediente.getIdIngre() }}">{{ ingrediente.getNomIngre() }}</option>
+              {% endfor %}</select></div>
+              <br>
+              <div class="ingredientes"><label for="fecha">Ingrediente 4:</label>
+              <select name="ingrediente4" class="cuadrado">
+              <option value="" disabled selected>Selecciona ingrediente</option>
+              {% for ingrediente in ingredientes %}
+                <option value="{{ ingrediente.getIdIngre() }}">{{ ingrediente.getNomIngre() }}</option>
+              {% endfor %}</select></div>
+              <br>
+              <div class="ingredientes"><label for="fecha">Ingrediente 5:</label>
+              <select name="ingrediente5" class="cuadrado">
+              <option value="" disabled selected>Selecciona ingrediente</option>
+              {% for ingrediente in ingredientes %}
+                <option value="{{ ingrediente.getIdIngre() }}">{{ ingrediente.getNomIngre() }}</option>
+              {% endfor %}</select></div>
+              <br>
+              <div class="ingredientes"><label for="fecha">Ingrediente 6:</label>
+              <select name="ingrediente6" class="cuadrado">
+              <option value="" disabled selected>Selecciona ingrediente</option>
+              {% for ingrediente in ingredientes %}
+                <option value="{{ ingrediente.getIdIngre() }}">{{ ingrediente.getNomIngre() }}</option>
+              {% endfor %}</select></div>
+              <br>
+            </div>
+
+            <br>
+            <div id="boton"><button class="boton">Crear Receta</button></div>
+          </form>
+          <div id="form3">
+              <form id="newIngrediente" action="CrearIng" method="post">
+                <div class="ingredientes"><label for="nombre">Nuevo Ingrediente:</label><br><br>  
+                <input type="text" name="newIngrediente" id="new_Ingrediente" required class="cuadrado" placeholder="Nombre del ingrediente"><br><br>
+                <div id="boton"><button class="boton2">Crear Ingrediente</button></div>
+              </form> 
+            </div>
+              <br>
+            <div>
+        </div>
+      </div>
+  </body>
+</html>
